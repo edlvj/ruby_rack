@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <title>Codebreaker</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <script src="/js/jquery-2.1.4.js"></script>
+  <script src="/js/materialize.min.js"></script>
+  <script src="/js/codebreaker.js"></script>
+  </head>
+    
+ <body>
+    <div class="container">
+        <div class="row">
+          <div class="col m12">
+            <h1 class="center-align" >Codebreaker</h1>
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="code" type="text" class="validate"  pattern="[1-6]{4,}" required>
+            <label class="active" for="code">Code</label>
+          </div>
+         
+        <div class="col s12">
+          <a class="waves-effect waves-light btn" id="check" >Check</a>
+          <a class="waves-effect waves-light btn blue lighten-2" id="hint" >Hint</a>
+        </div>
+        
+         <div class="col s9">
+              <div class="card-panel"><h5 class="center-align" id="result"> </h5></div>
+          </div>
+           <div class="col s3">
+              <div class="card-panel"><h5 class="center-align" id="hint_result"></h5></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="alert" class="modal">
+        <div class="modal-content">
+          <h4 id="status"></h4>
+          <div class="input-field col s12" id="save_input">
+            <input id="username" type="text" class="validate" >
+            <label class="active" for="code">Your name</label>
+          </div>
+          
+          <div id="score">
+            <table>
+              <thead>
+                <tr>
+                  <th >Name</th>
+                  <th >Attemps</th>
+                </tr>
+              </thead>
+              <tbody id="score_list">
+
+              </tbody>
+            </table>
+          </div>
+        
+          <a class="waves-effect waves-light btn deep-orange lighten-3" id="save">Save Score</a>
+          <a class="waves-effect waves-light btn  red lighten-1" id="restart" >Restart</a>
+        </div>
+       </div>
+       
+      <div id="welcome" class="modal">
+        <div class="modal-content">
+          <h4>Welcome to  CodeBreaker</h4>
+          <p>You have 10 attemps and 1 hint.
+             Press 'check' for guess your code. 
+             Press 'hint' for get hint. 
+          </p>
+          <a class="waves-effect waves-light btn red lighten-1 center-align" id="start">Start Play</a>
+        </div>
+      </div>
+          
+</body>
+</html>
