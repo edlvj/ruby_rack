@@ -16,12 +16,16 @@ class Racker
     case @request.path
       when '/' then render 'index'
       when '/start' then start_game 
-      when '/match' then render_json guess @request.params['code']
+      when '/match' then  guess 
       when '/hint' then hint
-      when '/save_score' then save_score @request.params['username']
+      when '/save_score' then save_score 
       when '/score' then score  
       else Rack::Response.new('Not Found', 404)
     end
+  end
+  
+  def guess
+    render_json ([ result: guess_match(@request.params['code']), attempts: @game.attempts ])
   end
   
   def start_game
@@ -37,18 +41,18 @@ class Racker
     render_json @game.stat 
   end  
   
-  def save_score(user_name)
-    @game.save_stat user_name
+  def save_score 
+    @game.save_stat @request.params['username']
     render_json true
   end  
   
-  def guess (code)
+  def guess_match( code )
     if @game.win? 
       true
     elsif @game.loose?
       false 
     else  
-     @game.match_guess(code) 
+     @game.match_guess code
     end
   end  
   

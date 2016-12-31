@@ -21,16 +21,18 @@ $( document ).ready(function() {
         type: 'POST',
         data: { code: $('#code').val() },
         success: function (data) {
-      
-          if(data == true) {
+            
+         if(data[0].result == true) {
             $(".container").hide();
             result('You Win !!!'); }
-          else if(data == false) {
+          else if(data[0].result == false) {
             $(".container").hide();
             result('You Loose');
           } else {
-            $("#result").text(data);  
-          }    
+            $("#result").text(data[0].result);  
+          } 
+          
+          $('#attemps').text(data[0].attempts);
       }
     }); 
   });
@@ -83,6 +85,7 @@ $( "#restart" ).click(function() {
           $('#code').val("");
           $("#result").text(""); 
           $("#hint_result").text(""); 
+          $("#attemps").text(""); 
        }
     });  
 });  
@@ -112,4 +115,6 @@ $("#username").keypress(function(e) {
 function result(text) {
     $('#status').text( text );
     $('#alert').openModal();
+    
+    $('#save_input').show();
 } 

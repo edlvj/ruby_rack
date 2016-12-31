@@ -1,4 +1,4 @@
-require_relative 'app/racker'
+require './app/racker.rb'
 
 use Rack::Reloader
 use Rack::Session::Cookie, key: 'rack.session', secret: 'secretKey'

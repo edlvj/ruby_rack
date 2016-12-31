@@ -15,17 +15,20 @@
           <div class="col m12">
             <h1 class="center-align" >Codebreaker</h1>
           </div>
+           <div class="col s12">
+              <div class="card-panel"><h5 class="center-align" id="attemps"></h5></div>
+          </div>
         </div>
           
         <div class="row">
           <div class="input-field col s12">
-            <input id="code" type="text" class="validate"  pattern="[1-6]{4,}" required>
+            <input id="code" name="code" type="text" class="validate"  pattern="[1-6]{4,}" required>
             <label class="active" for="code">Code</label>
           </div>
          
         <div class="col s12">
-          <a class="waves-effect waves-light btn" id="check" >Check</a>
-          <a class="waves-effect waves-light btn blue lighten-2" id="hint" >Hint</a>
+          <button class="waves-effect waves-light btn" id="check" >Check</button>
+          <button class="waves-effect waves-light btn blue lighten-2" id="hint" >Hint</button>
         </div>
         
          <div class="col s9">
@@ -41,12 +44,13 @@
         <div class="modal-content">
           <h4 id="status"></h4>
           <div class="input-field col s12" id="save_input">
-            <input id="username" type="text" class="validate" >
-            <label class="active" for="code">Your name</label>
+            <input id="username" name="username" type="text" class="validate" >
+            <label class="active"  for="username">Your name</label>
           </div>
           
           <div id="score">
             <table>
+             <caption>Records</caption>
               <thead>
                 <tr>
                   <th >Name</th>
@@ -59,8 +63,8 @@
             </table>
           </div>
         
-          <a class="waves-effect waves-light btn deep-orange lighten-3" id="save">Save Score</a>
-          <a class="waves-effect waves-light btn  red lighten-1" id="restart" >Restart</a>
+          <button class="waves-effect waves-light btn deep-orange lighten-3" id="save">Save Score</button>
+          <button class="waves-effect waves-light btn  red lighten-1" id="restart" >Restart</button>
         </div>
        </div>
        
@@ -71,7 +75,7 @@
              Press 'check' for guess your code. 
              Press 'hint' for get hint. 
           </p>
-          <a class="waves-effect waves-light btn red lighten-1 center-align" id="start">Start Play</a>
+          <button class="waves-effect waves-light btn red lighten-1 center-align" id="start" >Start Play</button>
         </div>
       </div>
           
